@@ -8,6 +8,8 @@ export const Sidebar = ({
   activeNote,
   setActiveNote,
 }) => {
+  const sortedNotes = notes.sort((a, b) => b.modDate - a.modDate);
+
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
