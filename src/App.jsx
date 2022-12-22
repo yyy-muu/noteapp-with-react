@@ -6,6 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [activeNote, setActiveNote] = useState(false);
+
   const onAddNote = () => {
     const newNote = {
       id: uuidv4(),
@@ -28,6 +30,8 @@ function App() {
         onAddNote={onAddNote}
         notes={notes}
         onDeleteNote={onDeleteNote}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
       />
       <Main />
     </div>
