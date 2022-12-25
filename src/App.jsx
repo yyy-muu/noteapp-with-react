@@ -15,14 +15,14 @@ function App() {
   }, [notes]);
 
   useEffect(() => {
-    setActiveNote(notes[0].id);
+    if (notes.length !== 0) setActiveNote(notes[0].id);
   }, []);
 
   const onAddNote = () => {
     const newNote = {
       id: uuidv4(),
       title: "newnote",
-      content: "noenor",
+      content: "sample note content",
       modDate: Date.now(),
     };
     setNotes([...notes, newNote]);
